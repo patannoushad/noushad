@@ -22,9 +22,6 @@ public class ScreenShorts {
 //        FileUtils.copyFile(src,new File("cybercrime.png"));
 
 
-
-
-
 //        TakesScreenshot tc =(TakesScreenshot) driver;
 //        File src = tc.getScreenshotAs(OutputType.FILE);
 //        FileUtils.copyFile(src,new File("Noushad1.png"));

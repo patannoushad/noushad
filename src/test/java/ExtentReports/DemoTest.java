@@ -6,7 +6,6 @@ import com.aventstack.extentreports.reporter.ExtentSparkReporter;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.support.PageFactory;
 import org.testng.Assert;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
@@ -17,13 +16,14 @@ import java.util.concurrent.TimeUnit;
 public class DemoTest {
     WebDriver driver;
     ExtentReports extent;
-
+    ExtentSparkReporter reporter;
+    ExtentTest eTest;
 
         @BeforeMethod
         public void configuration () {
 
-            String reportPath = System.getProperty("user.dir") + "\\report\\Index02.html";
-            ExtentSparkReporter reporter = new ExtentSparkReporter(reportPath);
+            String reportPath = System.getProperty("user.dir") + "\\report\\Index04.html";
+            reporter = new ExtentSparkReporter(reportPath);
 
             reporter.config().setReportName("Omayo Test Report");
             reporter.config().setDocumentTitle("Omayo Test Report Title");
@@ -36,9 +36,9 @@ public class DemoTest {
 
         }
         @Test
-        public void testOne () {
+        public void testOne1() {
 
-            ExtentTest eTest = extent.createTest("Test ONe Created");
+            eTest = extent.createTest("Test ONe Created");
             System.setProperty("webdriver.chrome.driver", "E:\\chrome\\chromedriver_win32\\chromedriver.exe");
             driver = new ChromeDriver();
             driver.manage().window().maximize();
@@ -52,8 +52,9 @@ public class DemoTest {
         }
         @AfterMethod
         public void tearDown () {
-            driver.close();
+
             extent.flush();
+            driver.close();
         }
 
 }

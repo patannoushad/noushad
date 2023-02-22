@@ -1,5 +1,6 @@
 package SeleniumJava;
          //   --------------------------------incomplete
+import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -8,12 +9,12 @@ import org.openqa.selenium.support.ui.Select;
 
 public class frames {
     public static void main(String[] args) {
-        System.setProperty("webdriver.chrome.driver","E:\\chrome\\chromedriver_win32\\chromedriver.exe");
-
+     //   System.setProperty("webdriver.chrome.driver","E:\\chrome\\chromedriver_win32\\chromedriver.exe");
+        WebDriverManager.chromedriver().setup();
         WebDriver driver = new ChromeDriver();
         driver.manage().window().maximize();
 
-       /* driver.get("https://www.hyrtutorials.com/p/frames-practice.html");
+        driver.get("https://www.hyrtutorials.com/p/frames-practice.html");
         driver.findElement(By.id("name")).sendKeys("Noushad");
         driver.switchTo().frame(driver.findElement(By.id("frm1")));
         int size = driver.findElements(By.tagName("iframe")).size();
@@ -27,9 +28,9 @@ public class frames {
         driver.switchTo().frame(driver.findElement(By.xpath("//*[@id='frm2']")));
         System.out.println("In the frame2");
         driver.findElement(By.id("firstName")).sendKeys("Noushad");
-    */
 
-//        ----swiching to multiple loops and finding one element
+
+//  ----------> switching to multiple loops and finding one element
 //
 //            driver.get("http://demo.guru99.com/test/guru99home/");
 //            driver.manage().window().maximize();

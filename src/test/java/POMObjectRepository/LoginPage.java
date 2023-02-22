@@ -7,6 +7,7 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
 public class LoginPage {
+    //encapsulation   ----------- abstraction
     WebDriver driver;
     public LoginPage(WebDriver driver) {
         this.driver=driver;
